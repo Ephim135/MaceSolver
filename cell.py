@@ -11,7 +11,8 @@ class Cell:
         self.has_top_wall = True
         self.has_bottom_wall = True
         self._win = win
-
+        self._visited = False
+        
     def __repr__(self):
         return f"self.x1: {self._x1}\nself.x2: {self._x2}\nself.y1: {self._y1}\nself.y2: {self._y2}\nhas_top_wall: {self.has_top_wall}"
 
@@ -49,7 +50,7 @@ class Cell:
         if not undo:
             color = "red"
         else:
-            color = "grey"
+            color = "white"
         line = Line(self.center, to_cell.center)
         self._win.draw_line(line, fill_color=color)
 
